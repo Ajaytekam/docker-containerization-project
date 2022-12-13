@@ -15,20 +15,44 @@
 
 ## Technologies 
 
-- Spring MVC
-- Spring Security
-- Spring Data JPA
-- Maven
-- JSP
-- MySQL 
+* Web Application
+  * Spring MVC
+  * Spring Security
+  * Spring Data JPA
+  * JSP  
+* Maven
+* MySQL 
+* RabbitMQ 
+* Memcache
 
-## Database
 
-* Here,we used Mysql DB 
-    * /src/main/resources/accountsdb
-    * accountsdb.sql file is a mysql dump file.we have to import this dump to mysql db server
-    * `mysql -u <user_name> -p accounts < accountsdb.sql`  
+``` 
+        ┌─────┐   
+        │NGINX│             
+        └─────┘
+          |↑
+          ||   _______┌─────┐
+          ||  //-----→│MySQL│←-----
+          ↓|  ↓|      └─────┘----||
+    ┌─────────────┐     |↑       ||
+    │Tomcat_Server│     ||       ||
+    └─────────────┘     ↓|       ||
+          |↑        ┌────────┐   ||
+          ||        │Memcache│   ||
+          ||        └────────┘   || 
+          ↓|         ↑|          ||
+      ┌────────┐     //          ||
+      │RabbitMQ│____//           ||
+      └────────┘←----            //
+          |↑                    //
+          ||___________________//
+          ----------------------     
+```  
 
-    
+## Command 
+
+```
+docker-compose up -d
+```
 
 
