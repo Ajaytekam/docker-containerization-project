@@ -42,6 +42,7 @@ services:
     build: 
       context: ./Docker-files/web
       dockerfile: Dockerfile
+    restart: always
     ports:
       - "80:80"
 
