@@ -1,6 +1,6 @@
 # Containerizing Java application with Apache tomcat, Nginx and Mysql server
 
-## Setps   
+## Steps   
 
 - 1. Fetch source code from git repository
 - 2. Create Dockerfiles for nginx, tomcat and mysql server and build images
